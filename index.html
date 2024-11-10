@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trans-Company</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="style/logo.jpg" alt="Logo">
+        </div>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="#">Головна</a></li>
+                <li><a href="./about.html">Про нас</a></li>
+                <li><a href="./contacts.html">Контакти</a></li>
+                <li><a href="./order.html">Заявка</a></li>
+                <li><a href="./cabinet.html">Кабінет</a></li>
+            </ul>
+        </nav>
+        <div class="burger" id="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <video autoplay muted loop>
+            <source src="style/CargoTRANS.mp4" type="video/mp4">
+            Ваш браузер не підтримує відео.
+        </video>
+        <div class="hero-text">
+            <h1>Знайдемо пропозицію перевезення вантажу, яка підходить саме вам</h1>
+            <p>Сумлінно працюємо з 2002 року</p>
+            <a href="./contacts.html" class="button">Контакт</a>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-image">
+            <img src="style/2FOTOMAIN.png" alt="Main Photo" style="width: 100%; height: auto;">
+            <div class="about-text-overlay">
+                <h2>Про нашу компанію</h2>
+                <p>Автотранспортна фірма ТзОВ «Шмега-Транс» здійснює перевезення вантажів автомобільним транспортом по всій території України, країн СНД та Євросоюзу.</p>
+                <h3>Вітаємо вас в компанії!</h3>
+                <p>Ми забезпечуємо найефективніші та найзручніші транспортні послуги для перевезення вантажів з України в Європу та навпаки, а також між країнами Європи!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Наші послуги задовольнять будь-якого клієнта</h2>
+    </section>
+
+    <footer>
+    </footer>
+
+    <!-- Підключення JavaScript коду -->
+    <script>
+        // Burger menu toggle
+        const burger = document.getElementById('burger');
+        const navLinks = document.getElementById('nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+    </script>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 ТзОВ «Шмега-Транс». Всі права захищені.</p>
+        <ul class="footer-links">
+            <li><a href="#">Політика конфіденційності</a></li>
+            <li><a href="#">Умови використання</a></li>
+            <li><a href="#">Контакти</a></li>
+        </ul>
+        <div class="footer-contact">
+            <span>Замовлення на перевезення</span>
+            <a href="#" class="order-button">Замовити</a>
+            <span>Як нас знайти: shmega-trans@gmail.com</span>
+            <span>Телефон: +38 012345678</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

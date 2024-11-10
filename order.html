@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявка - Trans-Company</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="style/logo.jpg" alt="Logo">
+        </div>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="contacts.html">Контакти</a></li>
+                <li><a href="order.html" class="active">Заявка</a></li>
+                <li><a href="./cabinet.html">Кабінет</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="order-form">
+        <h1>Оформлення перевезення</h1>
+        <form action="submit_order.php" method="POST">
+            <label for="cargo-type">Тип вантажу:</label>
+            <input type="text" id="cargo-type" name="cargo_type" required>
+
+            <label for="dimensions">Габарити вантажу (Д×Ш×В в см):</label>
+            <input type="text" id="dimensions" name="dimensions" placeholder="Наприклад, 200×150×100" required>
+
+            <label for="weight">Вага вантажу (в кг):</label>
+            <input type="number" id="weight" name="weight" required>
+
+            <label for="pickup-location">Місце завантаження:</label>
+            <input type="text" id="pickup-location" name="pickup_location" required>
+
+            <label for="delivery-location">Місце доставки:</label>
+            <input type="text" id="delivery-location" name="delivery_location" required>
+
+            <label for="date">Дата перевезення:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="contact-info">Контактна інформація:</label>
+            <input type="text" id="contact-info" name="contact_info" required>
+
+            <button type="submit">Подати заявку</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 ТзОВ «Шмега-Транс». Всі права захищені.</p>
+            <ul class="footer-links">
+                <li><a href="#">Політика конфіденційності</a></li>
+                <li><a href="#">Умови використання</a></li>
+                <li><a href="#">Контакти</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

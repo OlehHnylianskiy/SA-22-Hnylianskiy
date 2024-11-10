@@ -1,0 +1,640 @@
+/* Загальні стилі */  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fefcfc;
+    background-color: #0e1d3c;
+}
+
+/* Хедер і навігація */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0e1d3c;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo img {
+    height: 70px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #ffa500;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    background-color: #ffa500;
+    padding: 10px 20px;
+    border-radius: 10px; /* Закруглені кути */
+}
+
+/* Бургер-меню */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #ffa500;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+/* Стилі для мобільного меню */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50%; /* Займає пів сторінки */
+        background-color: #0e1d3c;
+        padding: 50px 20px;
+        align-items: flex-start;
+        transition: transform 0.5s ease-in-out;
+        transform: translateX(100%); /* Займає пів сторінки */
+    }
+
+    nav ul.active {
+        display: flex; /* Показує меню */
+        transform: translateX(0); /* Показує меню */
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.active .line2 {
+        opacity: 0;
+    }
+
+    .burger.active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero video {
+    width: 100%;
+    height: 700px; /* Висота відео */
+    object-fit: cover; /* Заповнює весь екран */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px; /* Закруглені кути для фону */
+}
+
+.hero-text h1 {
+    font-size: 40px; /* Збільшений шрифт */
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 22px; /* Збільшений шрифт */
+    margin-bottom: 20px; /* Відстань між текстом та кнопкою */
+}
+
+.button {
+    background-color: #ffa500;
+    color: #fff;
+    padding: 15px 30px; /* Збільшене наповнення для кнопок */
+    text-decoration: none;
+    border-radius: 10px; /* Закруглені кути для кнопки */
+}
+
+/* Секція "Про нас ГОЛОВНА" */
+.about {
+    display: flex;
+    flex-direction: column; /* Зміна на колонкове вирівнювання */
+    padding: 50px 20px;
+}
+
+.about-image {
+    position: relative;
+    flex: 1;
+    margin-bottom: 20px; /* Відстань між зображенням і текстом */
+}
+
+.about-image img {
+    width: 100%;
+    height: auto; /* Адаптує висоту зображення */
+}
+
+.about-text-overlay {
+    position: absolute;
+    top: 0; /* Вирівнювання до верху */
+    left: 0; /* Вирівнювання до лівого краю */
+    right: 0; /* Вирівнювання до правого краю */
+    bottom: 0; /* Вирівнювання до низу */
+    background-color: rgba(0, 0, 0, 0.6); /* Фон для тексту */
+    color: #ffa500; /* Колір тексту */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрування по вертикалі */
+    align-items: center; /* Центрування по горизонталі */
+    padding: 20px; /* Внутрішній відступ */
+    text-align: center; /* Вирівнювання тексту по центру */
+}
+
+.about-text-overlay h2 {
+    margin-bottom: 10px; /* Відстань між заголовком та текстом */
+}
+
+.about-text-overlay h3 {
+    margin-top: 10px; /* Відстань між текстами */
+}
+
+/* Секція "Наші послуги" */
+.services {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.services h2 {
+    margin-bottom: 20px; /* Відстань між заголовком та текстом */
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0e1d3c;
+    color: #fff;
+}
+
+.footer-content {
+    max-width: 800px; /* Максимальна ширина підвалу */
+    margin: 0 auto; /* Центрування */
+}
+
+.footer-links {
+    list-style: none; /* Скидання стандартного стилю списку */
+    padding: 0; /* Скидання внутрішнього відступу */
+}
+
+.footer-links li {
+    display: inline; /* Розміщення елементів в рядок */
+    margin: 0 15px; /* Відстань між посиланнями */
+}
+
+.footer-links a {
+    color: #ffa500; /* Колір посилань */
+    text-decoration: none; /* Скидання підкреслення */
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff; /* Колір при наведенні */
+}
+
+/* Контактна інформація */
+.footer-contact {
+    margin-top: 20px; /* Відстань зверху */
+    padding: 15px; /* Внутрішній відступ */
+    border-top: 1px solid #ffa500; /* Верхнє обрамлення */
+}
+
+.footer-contact span {
+    display: block; /* Кожен елемент на новому рядку */
+    margin: 5px 0; /* Відстань між рядками */
+}
+
+.order-button {
+    display: inline-block; /* Вирівнювання кнопки */
+    margin: 10px 0; /* Відстань навколо кнопки */
+    padding: 10px 20px;
+    background-color: #ffa500;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px; /* Закруглені кути кнопки */
+    transition: background-color 0.3s;
+}
+
+.order-button:hover {
+    background-color: #fff; /* Зміна фону при наведенні */
+    color: #0e1d3c; /* Зміна кольору тексту при наведенні */
+}
+
+/* Стиль для прав підвалу */
+.footer-rights {
+    margin-top: 20px; /* Відстань зверху */
+}
+
+/* Секція контактів */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact h1 {
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto; /* Центрування форми */
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    text-align: left; /* Вирівнювання тексту ліворуч */
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Закруглені кути */
+    font-size: 16px;
+}
+
+.contact-form button {
+    background-color: #ffa500;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px; /* Закруглені кути кнопки */
+    cursor: pointer; /* Зміна курсора при наведенні */
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #fff; /* Зміна фону при наведенні */
+    color: #ffffff; /* Зміна кольору тексту при наведенні */
+}
+/* Секція "Заявка" */
+.order-form {
+    max-width: 600px; /* Максимальна ширина форми */
+    margin: 50px auto; /* Центрування */
+    padding: 20px; /* Внутрішній відступ */
+    background-color: #1e2a4d; /* Легкий фон */
+    border-radius: 10px; /* Закруглені кути */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тінь для форми */
+}
+
+.order-form h2 {
+    text-align: center; /* Центрування заголовка */
+    color: #ffffff; /* Колір заголовка */
+    margin-bottom: 20px; /* Відстань між заголовком і полями */
+}
+
+.order-form label {
+    display: block; /* Переведення в блоки */
+    margin-bottom: 5px; /* Відстань між міткою та полем */
+    color: #ffffff; /* Колір мітки */
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+    width: 100%; /* Ширина поля */
+    padding: 10px; /* Внутрішній відступ */
+    margin-bottom: 15px; /* Відстань між полями */
+    border: 1px solid #ccc; /* Рамка поля */
+    border-radius: 5px; /* Закруглені кути */
+}
+
+.order-form button {
+    background-color: #ffa500; /* Колір кнопки */
+    color: #fff; /* Колір тексту */
+    padding: 10px 20px; /* Внутрішній відступ */
+    border: none; /* Без рамки */
+    border-radius: 5px; /* Закруглені кути */
+    cursor: pointer; /* Показати курсор */
+    transition: background-color 0.3s; /* Анімація для кнопки */
+}
+
+.order-form button:hover {
+    background-color: #fff; /* Зміна фону при наведенні */
+    color: #0e1d3c; /* Зміна кольору тексту при наведенні */
+}
+/* Загальні стилі для кабінету */
+body {
+    background-color: #0e1d3c; /* Темний фон */
+    color: #ffffff; /* Білий текст */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px; /* Максимальна ширина контейнера */
+    margin: 0 auto; /* Центрування */
+    padding: 20px; /* Внутрішній відступ */
+    background-color: #1e2a4d; /* Темніший фон для контейнера */
+    border-radius: 10px; /* Закруглені кути */
+}
+
+h1 {
+    text-align: center; /* Центрування заголовка */
+    margin-bottom: 20px; /* Відстань між заголовком та контентом */
+}
+
+.status {
+    margin-bottom: 20px; /* Відстань між статусами */
+    padding: 15px; /* Внутрішній відступ */
+    border-radius: 5px; /* Закруглені кути для статусу */
+    background-color: #ffa500; /* Помаранчевий фон для статусу */
+    color: #0e1d3c; /* Темно-синій текст */
+    font-weight: bold; /* Жирний текст */
+    text-align: center; /* Центрування тексту */
+}
+
+.table {
+    width: 100%; /* Ширина таблиці */
+    border-collapse: collapse; /* Об'єднання кордонів */
+}
+
+.table th, .table td {
+    border: 1px solid #ffa500; /* Кордон таблиці */
+    padding: 10px; /* Внутрішній відступ */
+    text-align: left; /* Вирівнювання тексту */
+}
+
+.table th {
+    background-color: #ffa500; /* Помаранчевий фон для заголовків таблиці */
+    color: #0e1d3c; /* Темно-синій текст */
+}
+
+.table tr:nth-child(even) {
+    background-color: #2e3c5d; /* Темніший фон для парних рядків */
+}
+
+.table tr:hover {
+    background-color: #3e4c7d; /* Фон при наведенні */
+    color: #fff; /* Білий текст при наведенні */
+}
+
+/* Загальні стилі */  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #0e1d3c;
+}
+
+/* Хедер і навігація */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0e1d3c;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo img {
+    height: 70px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #ffa500;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    background-color: #ffa500;
+    padding: 10px 20px;
+    border-radius: 10px; /* Закруглені кути */
+}
+
+/* Секція "Про нас" */
+.about {
+    display: flex;
+    flex-direction: column; /* Зміна на колонкове вирівнювання */
+    padding: 50px 20px;
+    background-color: #1e2a4d; /* Темніший фон для секції "Про нас" */
+    border-radius: 10px; /* Закруглені кути */
+}
+
+.about h1 {
+    text-align: center; /* Центрування заголовка */
+    margin-bottom: 30px; /* Відстань між заголовком та контентом */
+    color: #ffa500; /* Помаранчевий колір для заголовка */
+}
+
+.about-image {
+    position: relative;
+    margin-bottom: 20px; /* Відстань між зображенням і текстом */
+}
+
+.about-image img {
+    width: 100%;
+    height: auto; /* Адаптує висоту зображення */
+    border-radius: 10px; /* Закруглені кути для зображення */
+}
+
+.about-text-overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Темніший фон для тексту */
+    color: #ffa500; /* Колір тексту */
+    padding: 20px; /* Внутрішній відступ */
+    border-radius: 10px; /* Закруглені кути для тексту */
+    text-align: left; /* Вирівнювання тексту */
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0e1d3c;
+    color: #fff;
+}
+
+.footer-content {
+    max-width: 800px; /* Максимальна ширина підвалу */
+    margin: 0 auto; /* Центрування */
+}
+
+.footer-links {
+    list-style: none; /* Скидання стандартного стилю списку */
+    padding: 0; /* Скидання внутрішнього відступу */
+}
+
+.footer-links li {
+    display: inline; /* Розміщення елементів в рядок */
+    margin: 0 15px; /* Відстань між посиланнями */
+}
+
+.footer-links a {
+    color: #ffa500; /* Колір посилань */
+    text-decoration: none; /* Скидання підкреслення */
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff; /* Колір при наведенні */
+}
+
+/* Секція "Про нас" */
+.about {
+    padding: 50px 20px;
+    background-color: #1e2a4d;
+}
+
+.about h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffa500;
+}
+
+.about-container {
+    max-width: 800px; /* Зменшуємо максимальну ширину контейнера */
+    margin: 0 auto; /* Центрування */
+    padding: 20px; /* Внутрішній відступ */
+    background-color: #1e2a4d; /* Темніший фон для контейнера */
+    border-radius: 20px; /* Закруглені кути */
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    max-width: 100%; /* Залишаємо максимальну ширину 100% */
+    margin-bottom: 20px; /* Відстань між зображенням і текстом */
+}
+
+.about-text {
+    text-align: center;
+    color: #fff;
+}
+
+.about-text h2 {
+    margin: 20px 0 10px; /* Відстань між заголовками */
+    color: #ffa500; /* Помаранчевий колір для заголовків */
+}
+
+.about-text p {
+    margin-bottom: 20px; /* Відстань між абзацами */
+}
+
+
+/* Pricing Section */
+.pricing {
+    padding: 50px 20px;
+    background-color: #1e2a4d; /* Darker background for the pricing section */
+    color: #fff;
+    text-align: center;
+}
+
+.pricing h2 {
+    color: #ffa500; /* Orange color for the heading */
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between pricing cards */
+    max-width: 1200px; /* Max width to keep content centered */
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background-color: #0e1d3c; /* Darker color for individual cards */
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.pricing-card:hover {
+    background-color: #2e3c5d; /* Background color change on hover */
+}
+
+.pricing-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.pricing-card h3 {
+    color: #ffa500;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.pricing-card p {
+    margin-bottom: 15px;
+}
+
+.pricing-card .price {
+    font-size: 1.2em;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.order-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffa500;
+    color: #0e1d3c;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.order-button:hover {
+    background-color: #fff;
+    color: #ffa500;
+}
+
